@@ -1,7 +1,7 @@
 var tempoInicial = $("#tempo-digitacao").text();
 var campo = $(".campo-digitacao");
 
-$(document).ready(function(){
+$(document).ready(function() {
     atualizaTamanhoFrase();
     inicializaContadores();
     inicializaCronometro();
@@ -16,7 +16,6 @@ function atualizaTamanhoFrase() {
 }
 
 function inicializaContadores() {
-    
     campo.on("input", function(){
         var conteudo = campo.val();
     
@@ -37,6 +36,7 @@ function inicializaCronometro() {
             if(tempoRestante < 1){
                 campo.attr("disabled",true);
                 clearInterval(cronometroID);
+                campo.addClass("campo-desativado");
             }    
         },1000);
     })
