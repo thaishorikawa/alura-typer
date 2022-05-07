@@ -75,6 +75,14 @@ function sincronizaPlacar() {
     };
 
     $.post("http://localhost:3000/placar", dados, function(){
+    })
+}
 
+function atualizaPlacar() {
+    $.get("http://localhost:3000/placar", function(data){
+        $(data).each(function(){
+            var linha = novaLinha(this.usuario, this.pontos);
+            $("tbody").append(linha);
+        })
     })
 }
