@@ -75,12 +75,12 @@ function sincronizaPlacar() {
     };
 
     $.post("http://localhost:3000/placar", dados, function () {
-        $(".tooltip").toolltipster("open").toolltipster("content", "Sucesso ao sincronizar");
+        $(".tooltip").tooltipster("open").tooltipster("content", "Sucesso ao sincronizar");
     }).fail(function () {
-        $(".tooltip").toolltipster("open").toolltipster("content", "Falha ao sincronizar");
+        $(".tooltip").tooltipster("open").tooltipster("content", "Falha ao sincronizar");
     }).always(function () {
         setTimeout(function () {
-            $(".tooltip").toolltipster("close");
+            $(".tooltip").tooltipster("close");
         }, 1200);
     })
 }
